@@ -17,3 +17,9 @@ body {
     height: 500px;
     width: 500px;
 }
+
+.score {
+    background-color: aqua;
+    height: 500px;
+    width: 500px;
+}
