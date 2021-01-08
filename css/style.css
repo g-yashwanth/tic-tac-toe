@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cell-size: 150px;
+    --letter-size: ((var(--cell-size))*0.8);
+}
+
 .container {
     height: 100vh;
     font-family: sans-serif;
@@ -13,14 +18,62 @@
     align-items: center;
 }
 
-.wrapper {
-    background-color: khaki;
-    height: 100%;
-    width: 60%;
-}
-
 .score {
     background-color: aqua;
     height: 100%;
     width: 50%;
+}
+
+.wrapper {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.functions {
+    border: 5px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cornflowerblue;
+}
+
+.game-board {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    background-color: white;
+}
+
+.game-board .cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 5px solid black;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
 }
