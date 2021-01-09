@@ -36,12 +36,10 @@
 }
 
 .functions {
-    /* border: 5px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* background-color: cornflowerblue; */
     width: inherit;
 }
 
