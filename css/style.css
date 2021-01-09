@@ -6,7 +6,7 @@
 
 :root {
     --cell-size: 150px;
-    --letter-size: ((var(--cell-size))*0.8);
+    --letter-size: calc((var(--cell-size))*0.8);
 }
 
 .container {
@@ -49,13 +49,19 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(3, auto);
-    background-color: white;
+    margin-bottom: 2em;
+    /* background-color: white; */
 }
 
 .game-board .cell {
     width: var(--cell-size);
     height: var(--cell-size);
     border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
 
 .cell:first-child,
@@ -76,4 +82,45 @@
 .cell:nth-child(8),
 .cell:nth-child(9) {
     border-bottom: none;
+}
+
+.cell.x,
+.cell.o {
+    cursor: grab;
+}
+
+.cell.x::before,
+.cell.x::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--letter-size) * .12);
+    height: var(--letter-size);
+    background-color: rgb(71, 71, 71);
+} 
+
+.cell.x::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+    content: "";
+    position: absolute;
+    border-radius: 60%;
+}
+
+.cell.o::before {
+    width: var(--letter-size);
+    height: var(--letter-size);
+    background-color: rgb(71, 71, 71);
+}
+
+.cell.o::after {
+    width: calc(var(--letter-size) * .7);
+    height: calc(var(--letter-size) * .7);
+    background-color: rgb(255, 255, 255);
 }
