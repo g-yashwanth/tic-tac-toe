@@ -36,12 +36,13 @@
 }
 
 .functions {
-    border: 5px solid red;
+    /* border: 5px solid red; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
+    width: inherit;
 }
 
 .game-board {
@@ -123,4 +124,17 @@
     width: calc(var(--letter-size) * .7);
     height: calc(var(--letter-size) * .7);
     background-color: rgb(255, 255, 255);
+}
+
+#reset {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
 }
